@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100vw;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    height: 30vw;
+    align-items: center ;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+form{
+    margin-top: 2vw;
+    color: black;
+    padding: 1vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4vw;
+    text-align: center;
+    border-radius: 4px;
+    width: 15vw;
+}
+
+input{
+    outline: none;
+    height: 1.2vw;
+}
+
+button{
+    margin-top: 2vw;
+    color: white;
+    background-color: black;
+    height: 1.5vw;
+    border-radius: 3px;
+    margin-bottom: 1vw;
+}
+
+.message{
+    color: black;
+    font-weight: bold;
+
+}
+
+.screen-logged{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: block;
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+iframe{
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+
+.desapear{
+    display: none;
+}
+
+#logged-message{
+    margin-top: 1vw;
+    display: flex;
+    justify-content: center;
+}
+
