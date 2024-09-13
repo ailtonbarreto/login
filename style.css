@@ -16,7 +16,6 @@ body{
 .container{
     display: flex;
     justify-content: center;
-    height: 30vw;
     align-items: center ;
     position: absolute;
     z-index: 1;
@@ -36,7 +35,8 @@ form{
     gap: 0.4vw;
     text-align: center;
     border-radius: 4px;
-    width: 15vw;
+    width: 20vw;
+    height: 40vh;
 }
 
 input{
@@ -63,7 +63,8 @@ button{
     height: 100vh;
     width: 100vw;
     position: fixed;
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
 
@@ -82,7 +83,7 @@ iframe{
 }
 
 #logged-message{
-    margin-top: 1vw;
+    margin-top: 2vw;
     display: flex;
     justify-content: center;
 }
