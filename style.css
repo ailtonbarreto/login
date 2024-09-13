@@ -63,7 +63,7 @@ button{
     height: 100vh;
     width: 100vw;
     position: fixed;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -83,7 +83,7 @@ iframe{
 }
 
 #logged-message{
-    margin-top: 2vw;
+    margin-top: 1vw;
     display: flex;
     justify-content: center;
 }
