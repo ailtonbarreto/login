@@ -32,8 +32,8 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 0.4vw;
-    text-align: center;
     border-radius: 4px;
     width: 20vw;
     height: 40vh;
@@ -41,7 +41,12 @@ form{
 
 input{
     outline: none;
-    height: 1.2vw;
+    height: 1.5vw;
+    width: 100%;
+}
+
+label{
+    font-weight: bold;
 }
 
 button{
@@ -49,6 +54,7 @@ button{
     color: white;
     background-color: black;
     height: 1.5vw;
+    width: 40%;
     border-radius: 3px;
     margin-bottom: 1vw;
 }
@@ -74,6 +80,7 @@ button{
 iframe{
     height: 100vh;
     width: 100vw;
+    border: none;
     
 }
 
@@ -86,5 +93,6 @@ iframe{
     margin-top: 1vw;
     display: flex;
     justify-content: center;
+    margin-bottom: 0.5vw;
 }
 
