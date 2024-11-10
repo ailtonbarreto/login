@@ -1,3 +1,8 @@
+
+:root{
+    --bg : #0F8F8F;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -8,8 +13,7 @@
 body{
     height: 100vh;
     width: 100vw;
-    background-color: black;
-    color: white;
+    color: var(--bg);
     overflow-x: hidden;
 }
 
@@ -19,14 +23,14 @@ body{
     align-items: center ;
     position: absolute;
     z-index: 1;
-    background-color: black;
+    background-color: var(--bg);
     width: 100vw;
     height: 100vh;
 }
 
 form{
     margin-top: 2vw;
-    color: black;
+    color: var(--bg);
     padding: 1vw;
     background-color: white;
     display: flex;
@@ -35,14 +39,15 @@ form{
     align-items: center;
     gap: 0.4vw;
     border-radius: 4px;
-    width: 20vw;
-    height: 40vh;
+    width: 25vw;
+    height: 50vh;
 }
 
 input{
     outline: none;
     height: 1.5vw;
     width: 100%;
+    color: var(--bg);
 }
 
 label{
@@ -52,7 +57,8 @@ label{
 button{
     margin-top: 2vw;
     color: white;
-    background-color: black;
+    border: none;
+    background-color: var(--bg);
     height: 1.5vw;
     width: 40%;
     border-radius: 3px;
@@ -60,7 +66,7 @@ button{
 }
 
 .message{
-    color: black;
+    color: var(--bg);
     font-weight: bold;
 
 }

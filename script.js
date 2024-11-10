@@ -1,5 +1,5 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede o envio do formulário
+    event.preventDefault();
     
     // Pega os valores do input
     const username = document.getElementById('input-user').value;
