@@ -23,7 +23,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
                 logado.classList.add('desapear');
 
-                messagelogged.innerHTML = `Bem Vindo ${username}`
+                messagelogged.innerHTML = `Bem Vindo ${data.nickname}`
                 
             } else {
                 document.getElementById('alert').innerText = "Usuário ou senha incorretos!";
