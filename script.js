@@ -65,7 +65,7 @@ window.addEventListener("load", function () {
         fetch("keys.json")
             .then(response => response.json())
             .then(data => {
-                const usuarioAtual = data.find(u => u.user === "admin");
+                const usuarioAtual = data.find(u => u.user === u.user);
                 if (usuarioAtual) {
                     atualizarInterface(usuarioAtual);
                 } else {
