@@ -131,17 +131,48 @@ iframe{
     margin-bottom: 0.5vw;
 }
 
-
+/* ---------------------------------------------------- */
 
 @media (max-width: 768px) {
-    form{
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center ;
+        position: absolute;
+        z-index: 1;
+        background-color: var(--bg);
         width: 100vw;
         height: 100vh;
-        margin: 0vw;;
+    }
+    
+
+    .screen-logged{
+        padding-top: 1vw;
     }
 
-    .logo{
-        width: 50vw;
+    .msg{
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        height: 10vw;
+        padding: 0vw 2vw;
+        align-items: center;
+    
+    }
+
+    #logged-message{
+        display: none;
+    }
+
+    .exit-btn{
+        width: 30vw;
+        height: 6vw;
+        margin: 0vw;
+    }
+
+    .msg img{
+        width: 40vw;
     }
 
     input{
@@ -155,5 +186,5 @@ iframe{
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-    }
+    } 
 }
