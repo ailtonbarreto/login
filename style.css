@@ -84,6 +84,7 @@ button{
     display: flex;
     justify-content: space-between;
     width: 100vw;
+    height: 3vw;
     padding: 0vw 2vw;
     align-items: center;
 
@@ -93,8 +94,9 @@ button{
     width: 10vw;
 }
 
-.msg button{
+.exit-btn{
     width: 10vw;
+    margin: 0vw;
 }
 
 .screen-logged{

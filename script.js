@@ -46,7 +46,7 @@ window.addEventListener("load", function() {
                 iframe.src = data.link;
 
                 document.getElementById('container-login').classList.add('desapear');
-                document.getElementById('logged-message').innerHTML = `Logado como, ${data.nickname}`;
+                document.getElementById('logged-message').innerHTML = `Logado como ${data.nickname}`;
             })
             .catch(error => console.error("Erro ao buscar o arquivo keys.json:", error));
     }
@@ -57,7 +57,7 @@ window.addEventListener("load", function() {
         iframe.src = data.link;
 
         document.getElementById('container-login').classList.add('desapear');
-        document.getElementById('logged-message').innerHTML = `Logado como, ${data.nickname}`;
+        document.getElementById('logged-message').innerHTML = `Logado como ${data.nickname}`;
 
         localStorage.setItem("logon", "1");
     }
