@@ -1,71 +1,93 @@
-window.addEventListener("load", function() {
-    let logon = localStorage.getItem('logon');
+window.addEventListener("load", function () {
+    const logon = localStorage.getItem("logon");
 
-    
     if (logon === "1") {
-        entrarDireto(); 
+        entrarDireto();
     } else {
-    
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-         
-            const username = document.getElementById('input-user').value;
-            const password = document.getElementById('password').value;
-           
-        
-            fetch('keys.json')
-                .then(response => response.json())
-                .then(data => {
-                    const validUsername = data.user;
-                    const validPassword = data.password;
-        
-                   
-                    if (username === validUsername && password === validPassword) {
-                        realizarLogin(data);
-                    } else {
-                
-                        document.getElementById('alert').innerText = "Usuário ou senha incorretos!";
-                    }
-                })
-                .catch(error => {
-                    console.error("Erro ao buscar o arquivo keys.json:", error);
-                    document.getElementById('alert').innerText = "Erro ao carregar dados de login.";
-                });
-        });
+        configurarFormularioLogin();
     }
 
     console.log("Logon status:", logon);
 
-    
+    function configurarFormularioLogin() {
+        const loginForm = document.getElementById("loginForm");
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById("input-user").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (!username || !password) {
+                exibirAlerta("Usuário e senha são obrigatórios!");
+                return;
+            }
+
+            validarCredenciais(username, password);
+        });
+    }
+
+    function validarCredenciais(username, password) {
+        fetch("keys.json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar arquivo keys.json");
+                }
+                return response.json();
+            })
+            .then(data => {
+                const user = data.find(u => u.user === username && u.password === password);
+                if (user) {
+                    realizarLogin(user);
+                } else {
+                    exibirAlerta("Usuário ou senha incorretos!");
+                }
+            })
+            .catch(error => {
+                console.error("Erro ao buscar o arquivo keys.json:", error);
+                exibirAlerta("Erro ao carregar dados de login.");
+            });
+    }
+
+    function exibirAlerta(mensagem) {
+        const alert = document.getElementById("alert");
+        alert.innerText = mensagem;
+        alert.style.display = "block";
+    }
+
+    function realizarLogin(userData) {
+        atualizarInterface(userData);
+
+        localStorage.setItem("logon", "1");
+    }
+
+
     function entrarDireto() {
-        fetch('keys.json')
+        fetch("keys.json")
             .then(response => response.json())
             .then(data => {
-                const iframe = document.getElementById('iframe');
-                iframe.src = data.link;
-
-                document.getElementById('container-login').classList.add('desapear');
-                document.getElementById('logged-message').innerHTML = `Logado como ${data.nickname}`;
+                const usuarioAtual = data.find(u => u.user === "admin");
+                if (usuarioAtual) {
+                    atualizarInterface(usuarioAtual);
+                } else {
+                    exibirAlerta("Erro: Usuário não encontrado para login direto.");
+                }
             })
             .catch(error => console.error("Erro ao buscar o arquivo keys.json:", error));
     }
 
+    function atualizarInterface(userData) {
+        const iframe = document.getElementById("iframe");
+        iframe.src = userData.link;
 
-    function realizarLogin(data) {
-        const iframe = document.getElementById('iframe');
-        iframe.src = data.link;
-
-        document.getElementById('container-login').classList.add('desapear');
-        document.getElementById('logged-message').innerHTML = `Logado como ${data.nickname}`;
-
-        localStorage.setItem("logon", "1");
+        document.getElementById("container-login").classList.add("desapear");
+        document.getElementById("logged-message").innerHTML = `Logado como ${userData.nickname}`;
     }
 });
 
+
 function Exit() {
-    localStorage.setItem('logon', "0");
-    document.getElementById('container-login').classList.remove('desapear');
-    document.getElementById('iframe').src = "";
-    document.getElementById('logged-message').innerHTML = "";
+    localStorage.setItem("logon", "0");
+    document.getElementById("container-login").classList.remove("desapear");
+    document.getElementById("iframe").src = "";
+    document.getElementById("logged-message").innerHTML = "";
 }
