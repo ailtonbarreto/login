@@ -86,8 +86,9 @@ window.addEventListener("load", function () {
 
 
 function Exit() {
-    localStorage.setItem("logon", "0");
+    localStorage.removeItem("logon");
     document.getElementById("container-login").classList.remove("desapear");
     document.getElementById("iframe").src = "";
     document.getElementById("logged-message").innerHTML = "";
+    window.location.reload()
 }
