@@ -55,11 +55,11 @@ window.addEventListener("load", function () {
     }
 
     function realizarLogin(userData) {
-        atualizarInterface(userData);
-
         localStorage.setItem("logon", "1");
+        localStorage.setItem("currentUser", userData.user);
+        atualizarInterface(userData);
     }
-
+    
 
     function entrarDireto() {
         fetch("keys.json")
