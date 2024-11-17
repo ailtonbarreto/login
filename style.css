@@ -39,11 +39,11 @@ body{
 form{
     margin-top: 2vw;
     color: var(--bg);
-    padding: 1vw;
+    padding: 0.5vw;
     background-color: var(--cor-container);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     gap: 0.4vw;
     border-radius: 4px;
@@ -58,24 +58,32 @@ input{
     color: var(--cor-texto);
 }
 
+.campos{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    width: 90%;
+}
+
 label{
     font-weight: bold;
 }
 
 button{
-    margin-top: 2vw;
+    margin-top: 1vw;
     color: var(--cor-container);
     border: none;
     background-color: var(--bg);
-    height: 1.5vw;
+    height: 2vw;
     width: 40%;
     border-radius: 3px;
     margin-bottom: 1vw;
 }
 
 .message{
-    color: var(--bg);
+    color: red;
     font-weight: bold;
+    height: 3vw;
 
 }
 
@@ -95,8 +103,9 @@ button{
 }
 
 .exit-btn{
-    width: 10vw;
+    width: 5vw;
     margin: 0vw;
+    height: 1.5vw;
 }
 
 .screen-logged{
@@ -133,58 +142,6 @@ iframe{
 
 /* ---------------------------------------------------- */
 
-@media (max-width: 768px) {
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center ;
-        position: absolute;
-        z-index: 1;
-        background-color: var(--bg);
-        width: 100vw;
-        height: 100vh;
-    }
-    
+/* @media (max-width: 768px) {
 
-    .screen-logged{
-        padding-top: 1vw;
-    }
-
-    .msg{
-        display: flex;
-        justify-content: space-between;
-        width: 100vw;
-        height: 10vw;
-        padding: 0vw 2vw;
-        align-items: center;
-    
-    }
-
-    #logged-message{
-        display: none;
-    }
-
-    .exit-btn{
-        width: 30vw;
-        height: 6vw;
-        margin: 0vw;
-    }
-
-    .msg img{
-        width: 40vw;
-    }
-
-    input{
-        outline: none;
-        height: 8vw;
-        width: 80%;
-        color: var(--cor-texto);
-    }
-
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    } 
-}
+} */
