@@ -78,6 +78,7 @@ button{
     width: 40%;
     border-radius: 3px;
     margin-bottom: 1vw;
+    cursor: pointer;
 }
 
 .message{
@@ -106,6 +107,7 @@ button{
     width: 5vw;
     margin: 0vw;
     height: 1.5vw;
+    cursor: pointer;
 }
 
 .screen-logged{
