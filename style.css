@@ -162,6 +162,7 @@ iframe{
     label{
         font-weight: bold;
         font-size: 8vw;
+        margin: 2vw 0vw;
     }
 
     input{
@@ -203,6 +204,10 @@ iframe{
 
     .msg img{
         width: 30vw;
+    }
+
+    .message{
+        margin-bottom: 50vw;
     }
     
 }
