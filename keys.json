@@ -1,14 +1,7 @@
-[
-    {
-        "user": "admin",
-        "password": "123",
-        "nickname": "Diretor Comercial",
-        "link": "https://webstore-adm-az6vutpth5tk6hocomcgjr.streamlit.app/?embed=true"
-    },
-    {
-        "user": "assis",
-        "password": "123",
-        "nickname": "Assistente Comercial",
-        "link": "https://webstore-adm-az6vutpth5tk6hocomcgjr.streamlit.app/?embed=true"
-    }
-]
+[{
+    "user": "ailton",
+    "password": "@!lton071",
+    "nickname": "Proprietário",
+    "link": "https://webstore-adm-az6vutpth5tk6hocomcgjr.streamlit.app/?embed=true"
+}]
+
