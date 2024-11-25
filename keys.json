@@ -1,7 +1,14 @@
-[{
-    "user": "ailton",
-    "password": "@!lton071",
-    "nickname": "Proprietário",
-    "link": "https://webstore-adm-az6vutpth5tk6hocomcgjr.streamlit.app/?embed=true"
-}]
-
+[
+    {
+        "user": "ailton",
+        "password": "@!lton071",
+        "nickname": "Proprietário",
+        "link": "https://webstore-adm-az6vutpth5tk6hocomcgjr.streamlit.app/?embed=true"
+    },
+    {
+        "user": "logistica",
+        "password": "123",
+        "nickname": "Proprietário",
+        "link": "logistica.html"
+    }
+]
