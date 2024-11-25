@@ -8,7 +8,13 @@
     {
         "user": "logistica",
         "password": "123",
-        "nickname": "Proprietário",
+        "nickname": "logistica",
         "link": "logistica.html"
+    },
+    {
+        "user": "financeiro",
+        "password": "123",
+        "nickname": "Financeiro",
+        "link": "financeiro.html"
     }
 ]
