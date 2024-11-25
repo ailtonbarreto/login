@@ -62,18 +62,34 @@ window.addEventListener("load", function () {
     
 
     function entrarDireto() {
+        const currentUser = localStorage.getItem("currentUser");
+    
+        if (!currentUser) {
+            exibirAlerta("Erro: Usuário atual não encontrado no armazenamento local.");
+            return;
+        }
+    
         fetch("keys.json")
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar arquivo keys.json");
+                }
+                return response.json();
+            })
             .then(data => {
-                const usuarioAtual = data.find(u => u.user === u.user);
+                const usuarioAtual = data.find(u => u.user === currentUser);
                 if (usuarioAtual) {
                     atualizarInterface(usuarioAtual);
                 } else {
-                    exibirAlerta("Erro: Usuário não encontrado para login direto.");
+                    exibirAlerta("Erro: Usuário não encontrado no arquivo keys.json.");
                 }
             })
-            .catch(error => console.error("Erro ao buscar o arquivo keys.json:", error));
+            .catch(error => {
+                console.error("Erro ao buscar o arquivo keys.json:", error);
+                exibirAlerta("Erro ao carregar dados para login direto.");
+            });
     }
+    
 
     function atualizarInterface(userData) {
         const iframe = document.getElementById("iframe");
