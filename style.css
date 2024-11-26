@@ -16,7 +16,7 @@ body{
     height: 100vh;
     width: 100vw;
     color: var(--bg);
-    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .logo{
@@ -108,9 +108,11 @@ button{
 }
 
 .exit-btn{
-    width: 5vw;
+    width: 4vw;
+    padding: 0.6vw;
+    font-size: 0.7vw;
     margin: 0vw;
-    height: 1.5vw;
+    height: 0.5vw;
     cursor: pointer;
 }
 
@@ -140,10 +142,10 @@ iframe{
 
 #logged-message{
     text-transform: capitalize;
-    margin-top: 1vw;
     display: flex;
+    margin-left: 65vw;
+    font-size: 1vw;
     justify-content: center;
-    margin-bottom: 0.5vw;
 }
 
 /* ---------------------------------------------------- */
@@ -198,8 +200,12 @@ iframe{
     }
 
     .exit-btn{
-        width: 30vw;
-        height: 7vw;
+        width: 20vw;
+        padding: 0.6vw;
+        font-size: 4vw;
+        margin: 0vw;
+        height: 6vw;
+        cursor: pointer;
     }
 
     #logged-message{
