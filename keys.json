@@ -3,6 +3,7 @@
         "user": "ailton",
         "password": "@!lton071",
         "nickname": "Proprietário",
+<<<<<<< Updated upstream
         "link": "webstore.html"
     },
     {
@@ -16,5 +17,14 @@
         "password": "123",
         "nickname": "Financeiro",
         "link": "financeiro.html"
+=======
+        "link": "https://webstore-adm-az6vutpth5tk6hocomcgjr.streamlit.app/?embed=true"
+    },
+    {
+        "user": "adm",
+        "password": "123",
+        "nickname": "Usuario Teste",
+        "link": "https://app.powerbi.com/view?r=eyJrIjoiMmJiNDhkYWQtNWEzZS00YjQxLTkxNzctYWZiOWZlYWFjZTUyIiwidCI6IjE4Njc3OGFjLWJjNjMtNGE0My1iMmVlLThiMTk0MWVjYTRhOSJ9"
+>>>>>>> Stashed changes
     }
 ]

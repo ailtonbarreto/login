@@ -7,8 +7,6 @@ window.addEventListener("load", function () {
         configurarFormularioLogin();
     }
 
-    console.log("Logon status:", logon);
-
     function configurarFormularioLogin() {
         const loginForm = document.getElementById("loginForm");
         loginForm.addEventListener("submit", function (event) {
