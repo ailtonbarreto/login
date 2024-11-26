@@ -16,11 +16,5 @@
         "password": "123",
         "nickname": "Financeiro",
         "link": "financeiro.html"
-    },
-    {
-        "user": "adm",
-        "password": "123",
-        "nickname": "Usuario Teste",
-        "link": "https://app.powerbi.com/view?r=eyJrIjoiMmJiNDhkYWQtNWEzZS00YjQxLTkxNzctYWZiOWZlYWFjZTUyIiwidCI6IjE4Njc3OGFjLWJjNjMtNGE0My1iMmVlLThiMTk0MWVjYTRhOSJ9"
     }
 ]
