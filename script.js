@@ -28,7 +28,7 @@ window.addEventListener("load", function () {
         fetch("keys.json")
             .then(response => {
                 if (!response.ok) {
-                    throw new Error("Erro ao carregar arquivo keys.json");
+                    throw new Error("Usuário ou senha incorretos!");
                 }
                 return response.json();
             })
@@ -41,8 +41,7 @@ window.addEventListener("load", function () {
                 }
             })
             .catch(error => {
-                console.error("Erro ao buscar o arquivo keys.json:", error);
-                exibirAlerta("Erro ao carregar dados de login.");
+                console.error("Usuário ou senha incorretos!", error);
             });
     }
 
@@ -83,8 +82,7 @@ window.addEventListener("load", function () {
                 }
             })
             .catch(error => {
-                console.error("Erro ao buscar o arquivo keys.json:", error);
-                exibirAlerta("Erro ao carregar dados para login direto.");
+                console.error("Usuário ou senha incorretos!", error);
             });
     }
     
