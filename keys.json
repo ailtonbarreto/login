@@ -1,0 +1,20 @@
+[
+    {
+        "user": "ailton",
+        "password": "@!lton071",
+        "nickname": "Ailton Barreto",
+        "link": "webstore.html"
+    },
+    {
+        "user": "logistica",
+        "password": "123",
+        "nickname": "logistica",
+        "link": "logistica.html"
+    },
+    {
+        "user": "financeiro",
+        "password": "123",
+        "nickname": "Financeiro",
+        "link": "financeiro.html"
+    }
+]
