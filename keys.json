@@ -16,5 +16,11 @@
         "password": "123",
         "nickname": "Financeiro",
         "link": "financeiro.html"
+    },
+    {
+        "user": "estoque",
+        "password": "123",
+        "nickname": "Estoquista",
+        "link": "estoque3d.html"
     }
 ]
