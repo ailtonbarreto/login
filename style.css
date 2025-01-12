@@ -97,22 +97,22 @@ button{
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    height: 3vw;
+    height: 2.5vw;
     padding: 0vw 2vw;
     align-items: center;
 
 }
 
 .msg img{
-    width: 10vw;
+    width: 8vw;
 }
 
 .exit-btn{
     width: 4vw;
-    padding: 0.8vw;
-    font-size: 1vw;
+    padding: 0.2vw;
+    font-size: 0.7vw;
     margin: 0vw;
-    height: 0.5vw;
+    height: 1.5vw;
     cursor: pointer;
 }
 
