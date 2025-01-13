@@ -22,5 +22,11 @@
         "password": "123",
         "nickname": "Estoquista",
         "link": "estoque3d.html"
+    },
+    {
+        "user": "rh",
+        "password": "123",
+        "nickname": "Recursos Humanos",
+        "link": "rh.html"
     }
 ]
