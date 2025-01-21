@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
     }
 
     function validarCredenciais(username, password) {
-        fetch("keys.json")
+        fetch("../javascript/keys.json")
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Erro ao carregar arquivo keys.json");
@@ -67,7 +67,7 @@ window.addEventListener("load", function () {
             return;
         }
     
-        fetch("keys.json")
+        fetch("../javascript/keys.json")
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Erro ao carregar arquivo keys.json");
