@@ -1,3 +1,11 @@
+:root{
+    --color-h2: #ffffff;
+    --color-btn: #0690a8;
+    --color-text: #ffffff;
+    --bg:  #0d111d;
+    --font-size: 0.8vw;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,51 +15,49 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #fff;
-    background-color: #0a0f1d;
-    margin: 0;
-}
-
-.container {
-    display: flex;
-    width: 90%;
-    height: 100vh;
-    max-width: 1200px;
-    margin: 5vw auto auto auto;
+    color: var(--color-text);
+    background-color: var(--bg);
 }
 
 header {
-    background-color: #0d111d;
-    padding: 0.3vw 5vw;
+    background-color: var(--bg);
+    padding: 0.3vw 3vw;
     position: fixed;
     display: flex;
     justify-content: space-between;
+    text-align: center;
     align-items: center;
     width: 100vw;
     z-index: 1000;
 }
 
-.logo {
+.logo{
+    margin: 0;
+}
+
+.logo img{
     width: 10vw;
 }
 
-.navbar {
-    float: right;
+.navbar{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    width: 100vw;
+    gap: 4vw;
+    left: 0;
 }
 
 .navbar a {
-    color: #fff;
+    color: var(--color-text);
     text-decoration: none;
-    margin-left: 1.5rem;
     font-size: 1rem;
 }
 
-
-
 .btn{
-    background-color: #00aaff;
-    color: #fff;
-    padding: 0.5rem 1rem;
+    background-color: var(--color-btn);
+    color: var(--color-text);
+    padding: 0.5vw 1.5vw;
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: bold;
@@ -61,6 +67,26 @@ header {
 .btn a{
     text-decoration: none;
     color: #fff;
+    font-size: var(--font-size);
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    height: 100vh;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+}
+
+.container2 {
+    display: flex;
+    width: 90%;
+    height: 100vh;
+    max-width: 1200px;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero {
@@ -81,12 +107,13 @@ header {
 }
 
 .hero-content p {
+    color: var(--color-btn);
     font-size: 1.2rem;
     margin-bottom: 4vw;
 }
 
 .btn-primary {
-    background-color: #00aaff;
+    background-color: var(--color-btn);
     color: #fff;
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
@@ -95,19 +122,11 @@ header {
     text-decoration: none;
 }
 
-.hero-image img {
-    max-width: 100%;
-}
-
-.services {
-    text-align: center;
-    padding: 4rem 0;
-}
-
-.services h2 {
-    color: #00aaff;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+.container2 h2 {
+    color: var(--color-h2);
+    font-size: 1.5vw;
+    margin-top: 10vw;
+    margin-bottom: 2vw;
 }
 
 .service-cards {
@@ -127,7 +146,7 @@ header {
 }
 
 .card h3 {
-    color: #00aaff;
+    color: var(--color-btn);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -141,33 +160,6 @@ header {
     padding: 4rem 0;
 }
 
-.feature {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-}
-
-.feature img {
-    max-width: 40%;
-    border-radius: 10px;
-}
-
-.feature p {
-    max-width: 50%;
-    font-size: 1.1rem;
-    color: #cfcfcf;
-}
-
-.btn-secondary {
-    background-color: #003d66;
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: none;
-}
 
 .footer {
     background-color: #0d111d;
