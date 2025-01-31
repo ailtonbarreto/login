@@ -1,6 +1,6 @@
 :root{
     --color-h2: #ffffff;
-    --color-btn: #0690a8;
+    --color-btn: #2086EB;
     --color-text: #ffffff;
     --bg:  #0d111d;
     --font-size: 0.8vw;
@@ -127,6 +127,10 @@ header {
     font-size: 1.5vw;
     margin-top: 10vw;
     margin-bottom: 2vw;
+}
+
+.container2 span{
+    color: var(--color-btn);
 }
 
 .service-cards {
