@@ -101,6 +101,10 @@ header {
     max-width: 50%;
 }
 
+.hero-image img{
+    width: 30vw;
+}
+
 .hero-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
