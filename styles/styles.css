@@ -70,16 +70,31 @@ header {
 }
 
 
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0a0f1d, #0d1529);
+}
+
+.hero-image img{
+    width: 40vw;
+}
+
 .container {
     display: flex;
     justify-content: space-around;
     max-width: 90vw;
-    height: 100vh;
+    height: 50vh;
     margin: auto;
     align-items: center;
 }
 
-.container2 {
+
+.sub-container {
     display: flex;
     width: 90%;
     height: 100vh;
@@ -88,25 +103,11 @@ header {
     align-items: center;
 }
 
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #0a0f1d, #0d1529);
-}
 
-.hero-content {
-    max-width: 50%;
-}
-
-.hero-image img{
-    width: 30vw;
-}
 
 .hero-content h2 {
     font-size: 2vw;
-    margin-bottom: 2vw;
+    margin-bottom: 5vw;
 }
 
 .container span{
@@ -123,14 +124,14 @@ header {
     text-decoration: none;
 }
 
-.container2 h2 {
+.sub-container h2{
     color: var(--color-h2);
     font-size: 1.5vw;
     margin-top: 10vw;
-    margin-bottom: 2vw;
+    margin-bottom: 3vw;
 }
 
-.container2 span{
+.sub-container span{
     color: var(--color-btn);
 }
 
@@ -183,7 +184,7 @@ header {
 .vantagens h2 {
     color: var(--color-h2);
     font-size: 1.5vw;
-    margin-bottom: 2vw;
+    margin-bottom: 3vw;
 }
 
 .vantagens h2 span{
@@ -205,9 +206,6 @@ header {
     text-align: justify;
 
 }
-
-
-
 
 
 
