@@ -212,6 +212,19 @@ header {
 
 }
 
+.btn-project{
+    background-color: var(--color-btn);
+    color: #fff;
+    font-size: 0.9vw;
+    border-radius: 5px;
+    padding: 0.3vw 1vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
 
 .footer {
     background-color: #0d111d;
