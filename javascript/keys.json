@@ -24,6 +24,12 @@
         "link": "estoque3d.html"
     },
     {
+        "user": "casa",
+        "password": "123",
+        "nickname": "Engenheiro",
+        "link": "casa3d.html"
+    },
+    {
         "user": "rh",
         "password": "123",
         "nickname": "Recursos Humanos",
