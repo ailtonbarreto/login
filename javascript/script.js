@@ -1,15 +1,9 @@
 window.addEventListener("load", function () {
-    const logon = localStorage.getItem("logon");
-
-    if (logon === "1") {
-        entrarDireto();
-    } else {
-        configurarFormularioLogin();
-    }
+    configurarFormularioLogin();
 
     function configurarFormularioLogin() {
         const loginForm = document.getElementById("loginForm");
-        loginForm.addEventListener("submit", function (event) {
+        loginForm.addEventListener("submit", async function (event) {
             event.preventDefault();
 
             const username = document.getElementById("input-user").value.trim();
@@ -20,30 +14,57 @@ window.addEventListener("load", function () {
                 return;
             }
 
-            validarCredenciais(username, password);
+            await validarCredenciais(username, password);
         });
     }
 
-    function validarCredenciais(username, password) {
-        fetch("../javascript/keys.json")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar arquivo keys.json");
-                }
-                return response.json();
-            })
-            .then(data => {
-                const user = data.find(u => u.user === username && u.password === password);
-                if (user) {
-                    realizarLogin(user);
-                } else {
-                    exibirAlerta("Usuário ou senha incorretos!");
-                }
-            })
-            .catch(error => {
-                console.error("Erro ao buscar o arquivo keys.json:", error);
-                exibirAlerta("Erro ao carregar dados de login.");
+    async function obterDadosPlanilha() {
+        try {
+            // Buscar o JSON com o link da planilha
+            const response = await fetch("../javascript/keys.json");
+            if (!response.ok) throw new Error("Erro ao carregar arquivo keys.json");
+
+            const data = await response.json();
+            if (!data.length || !data[0].base) throw new Error("Formato inválido do JSON.");
+
+            const planilhaURL = data[0].base;
+
+            // Buscar os dados da planilha (CSV)
+            const planilhaResponse = await fetch(planilhaURL);
+            if (!planilhaResponse.ok) throw new Error("Erro ao carregar a planilha.");
+
+            const csvText = await planilhaResponse.text();
+            return processarCSV(csvText);
+        } catch (error) {
+            console.error("Erro:", error);
+            exibirAlerta("Erro ao carregar dados.");
+            return [];
+        }
+    }
+
+    async function validarCredenciais(username, password) {
+        const usuarios = await obterDadosPlanilha();
+        const user = usuarios.find(u => u.user === username && u.password === password && u.status === "Liberado");
+
+        if (user) {
+            realizarLogin(user);
+        } else {
+            exibirAlerta("Usuário ou senha incorretos!");
+        }
+    }
+
+    function processarCSV(csvText) {
+        const linhas = csvText.split("\n").map(l => l.trim()).filter(l => l);
+        const cabecalho = linhas[0].split(",").map(h => h.trim());
+
+        return linhas.slice(1).map(linha => {
+            const valores = linha.split(",").map(v => v.trim());
+            let obj = {};
+            cabecalho.forEach((chave, index) => {
+                obj[chave] = valores[index] || "";
             });
+            return obj;
+        });
     }
 
     function exibirAlerta(mensagem) {
@@ -53,41 +74,11 @@ window.addEventListener("load", function () {
     }
 
     function realizarLogin(userData) {
-        localStorage.setItem("logon", "1");
-        localStorage.setItem("currentUser", userData.user);
+
+        sessionStorage.setItem("logon", "1");
+        sessionStorage.setItem("currentUser", userData.user);
         atualizarInterface(userData);
     }
-    
-
-    function entrarDireto() {
-        const currentUser = localStorage.getItem("currentUser");
-    
-        if (!currentUser) {
-            exibirAlerta("Erro: Usuário atual não encontrado no armazenamento local.");
-            return;
-        }
-    
-        fetch("../javascript/keys.json")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar arquivo keys.json");
-                }
-                return response.json();
-            })
-            .then(data => {
-                const usuarioAtual = data.find(u => u.user === currentUser);
-                if (usuarioAtual) {
-                    atualizarInterface(usuarioAtual);
-                } else {
-                    exibirAlerta("Erro: Usuário não encontrado no arquivo keys.json.");
-                }
-            })
-            .catch(error => {
-                console.error("Erro ao buscar o arquivo keys.json:", error);
-                exibirAlerta("Erro ao carregar dados para login direto.");
-            });
-    }
-    
 
     function atualizarInterface(userData) {
         const iframe = document.getElementById("iframe");
@@ -98,11 +89,13 @@ window.addEventListener("load", function () {
     }
 });
 
-
 function Exit() {
-    localStorage.removeItem("logon");
+
+    sessionStorage.removeItem("logon");
+    sessionStorage.removeItem("currentUser");
+
     document.getElementById("container-login").classList.remove("desapear");
     document.getElementById("iframe").src = "";
     document.getElementById("logged-message").innerHTML = "";
-    window.location.reload()
+    window.location.reload();
 }

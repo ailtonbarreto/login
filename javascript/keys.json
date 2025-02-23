@@ -1,38 +1,5 @@
 [
     {
-        "user": "ailton",
-        "password": "@!lton071",
-        "nickname": "Ailton Barreto",
-        "link": "webstore.html"
-    },
-    {
-        "user": "logistica",
-        "password": "123",
-        "nickname": "logistica",
-        "link": "logistica.html"
-    },
-    {
-        "user": "financeiro",
-        "password": "123",
-        "nickname": "Financeiro",
-        "link": "financeiro.html"
-    },
-    {
-        "user": "estoque",
-        "password": "123",
-        "nickname": "Estoquista",
-        "link": "estoque3d.html"
-    },
-    {
-        "user": "casa",
-        "password": "123",
-        "nickname": "Engenheiro",
-        "link": "casa3d.html"
-    },
-    {
-        "user": "rh",
-        "password": "123",
-        "nickname": "Recursos Humanos",
-        "link": "rh.html"
+        "base": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQvIthAtHN5PCoyzANtO3AKLwZMvKxOmEo-7bSsS1rCW0xcmySportWwXcSdA6mWZ3NjFH65LUrp2CC/pub?gid=0&single=true&output=csv"
     }
 ]
