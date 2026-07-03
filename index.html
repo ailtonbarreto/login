@@ -6,57 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/lock.png" type="image/x-icon">
+    <link rel="shortcut icon" href="lock.png" type="image/x-icon">
     <title>Tela de login</title>
 </head>
 
 <body>
 
     <div class="container" id="container">
+        
         <div class="form-container sign-up">
+
             <form>
                 <h1>Criar Conta</h1>
 
-                <!-- <span>Cadastre-se e Acesse</span> -->
                 <input type="email" placeholder="Email">
+
                 <input type="password" placeholder="Password">
+
                 <button>Cadastrar</button>
 
             </form>
+
         </div>
+
         <div class="form-container sign-in">
+
             <form>
                 <h1>Login</h1>
-
-                <!-- <span>Entre com seu email e senha</span> -->
 
                 <input type="email" placeholder="Email">
 
                 <input type="password" placeholder="Password">
 
-                <a href="#">Esqueceu a Senha?</a>
+                <a>Esqueceu a Senha?</a>
 
                 <button>Entrar</button>
 
             </form>
+
         </div>
+
         <div class="toggle-container">
+
             <div class="toggle">
+
                 <div class="toggle-panel toggle-left">
+
                     <h1>Possui Conta?</h1>
+
                     <p>Entre com seu e-mail e senha</p>
+
                     <button class="hidden" id="login">Entrar</button>
+
                 </div>
+
                 <div class="toggle-panel toggle-right">
+
                     <h1>Novo Por Aqui?</h1>
+
                     <p>Faça seu Cadastro</p>
+
                     <button class="hidden" id="register">Cadastre-se</button>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
